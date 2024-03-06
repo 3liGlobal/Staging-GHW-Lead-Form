@@ -344,7 +344,12 @@ var States = {
 var countriesWithState = ["ARE", "ESP", "IRQ", "POL", "SDN", "USA"];
 
 var original_zf_MandArray = [
-  "Name_First", "Name_Last", "Email", "SingleLine", "Address_AddressLine1", "Address_ZipCode", "Address_Country"
+  "Name_First",
+  "Name_Last",
+  "Email",
+  "SingleLine",
+  "Address_ZipCode",
+  "Address_Country",
 ];
 
 let zip_city_state = [
@@ -152553,9 +152558,11 @@ window.onload = function () {
     }
   }
 
-  // stateDropdown.onchange = function () {
-  //   updateCityDropdown();
-  // };
+  stateDropdown.onchange = function () {
+    //updateCityDropdown();
+    const selectedState = document.querySelector(".state-dropdown").value;
+    stateText.value = selectedState;
+  };
 
   // function updateCityDropdown() {
   //   const selectedCountry = countySel.value; // Replace with the actual reference to the country dropdown
@@ -152708,8 +152715,8 @@ window.onload = function () {
     // Remove "Address_Region" if the dropdown is hidden
     zf_MandArray = original_zf_MandArray.filter(function (element) {
       return (
-        (element !== "Address_Region" || isDropdownVisible) 
-        // &&(element !== "Address_City" || isDropdownCityVisible) 
+        element !== "Address_Region" || isDropdownVisible
+        // &&(element !== "Address_City" || isDropdownCityVisible)
         // &&(element !== "Address_ZipCode" || isDropdownZCVisible)
       );
     });

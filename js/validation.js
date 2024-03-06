@@ -186,6 +186,7 @@ function doubleCheck() {
 }
 
 function zf_ShowErrorMsg1(uniqName) {
+  
   var fldLinkName;
   for (errInd = 0; errInd < zf_FieldArray.length; errInd++) {
     fldLinkName = zf_FieldArray[errInd].split("_")[0];
