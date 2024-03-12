@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/google-libphonenumber/3.2.13/libphonenumber.min.js"></script>
 	<style>
 		.state-dropdown,
 		.state-text
@@ -145,7 +146,7 @@
 													name="PhoneNumber_countrycode" maxlength="20" checktype="c7"
 													value="" phoneFormat="1" isCountryCodeEnabled=false fieldType="11"
 													id="international_PhoneNumber_countrycode" valType="number"
-													phoneFormatType="1" placeholder="" autocomplete="off" />
+													phoneFormatType="1" placeholder="" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
 											</span>
 											<div class="zf-clearBoth"></div>
 										</div>
@@ -165,7 +166,7 @@
 													name="PhoneNumber1_countrycode" maxlength="20" checktype="c7"
 													value="" phoneFormat="1" isCountryCodeEnabled=false fieldType="11"
 													id="international_PhoneNumber1_countrycode" valType="number"
-													phoneFormatType="1" placeholder="" autocomplete="off" />
+													phoneFormatType="1" placeholder="" autocomplete="off" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
 											</span>
 											<div class="zf-clearBoth"></div>
 										</div>
@@ -513,20 +514,13 @@
 		});
 
 		// Mobile Phone
-		var iti = window.intlTelInput(document.querySelector("#international_PhoneNumber1_countrycode"), {
+		var iti1 = window.intlTelInput(document.querySelector("#international_PhoneNumber1_countrycode"), {
 			separateDialCode: false,
 			preferredCountries: ["US"],
 			allowDropdown: true,
 			hiddenInput: "full",
 			utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
 		});
-
-		// $("form").submit(function () {
-		// 	var full_number = iti.getNumber(intlTelInputUtils.numberFormat.E164);
-		// 	$("input[name='phone_number[full]'").val(full_number);
-		// 	alert(full_number)
-
-		// });
 	</script>
 </body>
 
