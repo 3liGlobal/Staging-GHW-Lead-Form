@@ -468,6 +468,7 @@
 				dropdownList.empty();
 			}
 		}
+
 		function callback(e, thisObj) {
 			let id = thisObj.id;
 			const query = `https://api.addressy.com/Capture/Interactive/Find/v1.10/json3.ws?Key=TY78-BD75-NW81-XE97&Countries=US&Limit=20&Container=${id}`;
@@ -501,6 +502,7 @@
 				});
 			});
 		}
+		
 		function getAddressDetail(e, thisObj) {
 			let id = thisObj.id;
 			const query = `https://api.addressy.com/Capture/Interactive/Retrieve/v1.2/json3.ws?Key=TY78-BD75-NW81-XE97&Id=${id}`;
