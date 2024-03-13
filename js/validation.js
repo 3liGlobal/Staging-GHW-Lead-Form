@@ -573,13 +573,22 @@ function validatePhoneNumber(number, errorId, errorMessage) {
 }
 
 function phoneFormat() {
+  let valid = false;
   // Get the intlTelInput instances for phone number fields
-  var iti = window.intlTelInputGlobals.getInstance(document.getElementById("international_PhoneNumber_countrycode"));
-  var iti1 = window.intlTelInputGlobals.getInstance(document.getElementById("international_PhoneNumber1_countrycode"));
+  var iti = window.intlTelInputGlobals.getInstance(
+    document.getElementById("international_PhoneNumber_countrycode")
+  );
+  var iti1 = window.intlTelInputGlobals.getInstance(
+    document.getElementById("international_PhoneNumber1_countrycode")
+  );
 
   // Get the values of phone numbers
-  const phoneNumber = document.getElementById("international_PhoneNumber_countrycode").value.trim();
-  const mobileNumber = document.getElementById("international_PhoneNumber1_countrycode").value.trim();
+  const phoneNumber = document
+    .getElementById("international_PhoneNumber_countrycode")
+    .value.trim();
+  const mobileNumber = document
+    .getElementById("international_PhoneNumber1_countrycode")
+    .value.trim();
 
   // Get the selected country codes
   var countryCode = iti.getSelectedCountryData().iso2;
@@ -592,16 +601,23 @@ function phoneFormat() {
 
   // Validate the parsed phone numbers
   if (!PhoneNumber.isValidNumber(number)) {
-    document.getElementById("PhoneNumber_error").textContent = "Please insert the correct phone number";
+    document.getElementById("PhoneNumber_error").textContent =
+      "Please insert the correct phone number";
     document.getElementById("PhoneNumber_error").style.display = "block";
+    valid = false;
   } else {
     document.getElementById("PhoneNumber_error").style.display = "none";
+    valid = true;
   }
 
   if (!PhoneNumber.isValidNumber(number1)) {
-    document.getElementById("PhoneNumber1_error").textContent = "Please insert the correct phone number";
+    document.getElementById("PhoneNumber1_error").textContent =
+      "Please insert the correct phone number";
     document.getElementById("PhoneNumber1_error").style.display = "block";
+    valid = false;
   } else {
     document.getElementById("PhoneNumber1_error").style.display = "none";
+    valid = true;
   }
+  return valid;
 }
