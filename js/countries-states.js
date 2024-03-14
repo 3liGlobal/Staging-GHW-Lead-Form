@@ -152505,7 +152505,7 @@ window.onload = function () {
     //cityDropdown.disabled = true;
     updateStateDropdown();
     // updateStateDropdown1();
-    updateArray();
+    //updateArray();
   };
 
   function updateStateDropdown() {
@@ -152736,7 +152736,7 @@ window.onload = function () {
 
   // Initial setup
   updateStateDropdown();
-  updateArray();
+  //updateArray();
 
   stateText.addEventListener("input", myFunction);
   function myFunction() {
