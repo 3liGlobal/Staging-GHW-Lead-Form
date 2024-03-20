@@ -1202,6 +1202,7 @@ var original_zf_MandArray = [
 var zf_MandArray = original_zf_MandArray.slice();
 
 window.onload = function () {
+  console.log("Environment: Sandbox-1")
   var countySel = document.querySelector(".zf-form-sBox"),
     stateDropdown = document.querySelector(".state-dropdown"),
     stateText = document.querySelector(".state-text"),
