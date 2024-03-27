@@ -554,7 +554,7 @@ function phoneNumberValidation() {
       "Mobile Phone Should be more than 5"
     );
 
-    resolve(isValidPhoneNumber || isValidMobileNumber);
+    resolve(isValidPhoneNumber && isValidMobileNumber);
   });
 }
 
