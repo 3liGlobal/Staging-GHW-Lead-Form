@@ -541,7 +541,6 @@ function phoneNumberValidation() {
       .getElementById("international_PhoneNumber1_countrycode")
       .value.trim()
   );
-
   return new Promise(function (resolve) {
     const isValidPhoneNumber = validatePhoneNumber(
       phoneNumber,
@@ -553,13 +552,13 @@ function phoneNumberValidation() {
       "PhoneNumber1_error",
       "Mobile Phone Should be more than 5"
     );
-
+    debugger
     resolve(isValidPhoneNumber && isValidMobileNumber);
   });
 }
 
 function validatePhoneNumber(number, errorId, errorMessage) {
-  const isValid = !isNaN(number) && number > 5;
+  const isValid = !isNaN(number) && Math.abs(number).toString().length > 5;
   const errorElement = document.getElementById(errorId);
 
   if (isValid) {
