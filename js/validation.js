@@ -599,24 +599,27 @@ function phoneFormat() {
   const number1 = PhoneNumber.parse(mobileNumber, countryCode1);
 
   // Validate the parsed phone numbers
-  if (!PhoneNumber.isValidNumber(number)) {
+  const isValidNumber = PhoneNumber.isValidNumber(number);
+  const isValidNumber1 = PhoneNumber.isValidNumber(number1);
+
+  if (!isValidNumber) {
     document.getElementById("PhoneNumber_error").textContent =
       "Please insert the correct phone number";
     document.getElementById("PhoneNumber_error").style.display = "block";
-    valid = false;
   } else {
     document.getElementById("PhoneNumber_error").style.display = "none";
-    valid = true;
   }
 
-  if (!PhoneNumber.isValidNumber(number1)) {
+  if (!isValidNumber1) {
     document.getElementById("PhoneNumber1_error").textContent =
       "Please insert the correct phone number";
     document.getElementById("PhoneNumber1_error").style.display = "block";
-    valid = false;
   } else {
     document.getElementById("PhoneNumber1_error").style.display = "none";
-    valid = true;
   }
+
+  // Set valid to true only if both numbers are valid
+  valid = isValidNumber && isValidNumber1;
+
   return valid;
 }
