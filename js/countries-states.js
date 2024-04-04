@@ -1284,7 +1284,7 @@ window.onload = function () {
   }
 
   stateDropdown.onchange = function () {
-    //updateCityDropdown();
+    updateCityDropdown();
     const selectedState = document.querySelector(".state-dropdown").value;
     stateText.value = selectedState;
   };
@@ -1312,7 +1312,7 @@ window.onload = function () {
   //   countyInput.value = "";
 
   //   if (countySel.value == "USA") {
-  //     stateLabel.value = stateDropdown.selectedOptions[0].innerHTML;
+       stateLabel.value = stateDropdown.selectedOptions[0].innerHTML;
   //   }
   //   // If a country is selected, proceed to update the city dropdown
   //   if (selectedCountry) {
