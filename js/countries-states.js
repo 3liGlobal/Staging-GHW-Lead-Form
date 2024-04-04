@@ -1289,7 +1289,7 @@ window.onload = function () {
     stateText.value = selectedState;
   };
 
-  // function updateCityDropdown() {
+   function updateCityDropdown() {
   //   const selectedCountry = countySel.value; // Replace with the actual reference to the country dropdown
   //   const selectedState = document.querySelector(".state-dropdown").value;
   //   stateText.value = selectedState;
@@ -1340,7 +1340,7 @@ window.onload = function () {
   //       });
   //     }
   //   }
-  // }
+  }
 
   // cityDropdown.onchange = function () {
   //   updateZipCodeDropdown();
