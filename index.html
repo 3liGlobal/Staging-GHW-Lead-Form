@@ -646,7 +646,7 @@
 						dropdownList.append(
 							`<div class="dropdown-item" id="BuildingNumber, ${option.Text}" onclick="getAddressDetail(event, this);"> ${option.Text}  ${option.Description.includes("-") ? option.Description.substring(0, option.Description.lastIndexOf(" - ")) : option.Description}<span id="${option.Id}" onclick="callback(event, this);">see all ${option.Description}</span></div></div>`
 						);
-					} else if (option.Type === "BuildingNumberType") {
+					}else if (option.Type === "BuildingNumberType") {
 						dropdownList.append(
 							`<div class="dropdown-item" id="BuildingNumberType, ${option.Text}" onclick="getAddressDetail(event, this);"> ${option.Text}  ${option.Description.includes("-") ? option.Description.substring(0, option.Description.lastIndexOf(" - ")) : option.Description}<span id="${option.Id}" onclick="callback(event, this);">see all ${option.Description}</span></div></div>`
 						);
@@ -692,12 +692,6 @@
 			allowDropdown: true,
 			hiddenInput: "full",
 			utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
-		});
-
-		document.querySelector("#international_PhoneNumber1_countrycode").addEventListener("keydown", function (event) {
-			const phnCountry = (iti1.getSelectedCountryData().iso2).toUpperCase();
-			var index = convert_ISO_3166_2_to_1[phnCountry];
-			$('.zf-form-sBox').val(index);
 		});
 
 		document.addEventListener("change", function (event) {
