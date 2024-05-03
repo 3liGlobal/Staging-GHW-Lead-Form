@@ -76,8 +76,9 @@
 												<em class="zf-important">*</em>
 											</label>
 											<input type="text" maxlength="255" name="Name_First" fieldType=7
-												placeholder="First Name" autocomplete="off" />
-											<p id="Name_error" class="zf-errorMessage" style="display:none;">Please complete this required field.</p>
+												placeholder="First Name" autocomplete="off" onkeypress="return blockSpecialChar(event)" />
+											<p id="Name_error" class="zf-errorMessage" style="display:none;">Please
+												complete this required field.</p>
 										</span>
 										</span> </span>
 										<span> <label>Last Name
@@ -85,8 +86,9 @@
 
 											</label>
 											<input type="text" maxlength="255" name="Name_Last" fieldType=7
-												placeholder="Last Name" autocomplete="off" />
-											<p id="Name_error" class="zf-errorMessage" style="display:none;">Please complete this required field.</p>
+												placeholder="Last Name" autocomplete="off" onkeypress="return blockSpecialChar(event)" />
+											<p id="Name_error" class="zf-errorMessage" style="display:none;">Please
+												complete this required field.</p>
 
 										</span>
 										</span> </span>
@@ -126,7 +128,8 @@
 								<div class="zf-tempContDiv">
 									<span> <input fieldType=9 type="text" maxlength="255" name="Email" checktype="c5"
 											value="" placeholder="Email" autocomplete="off" id="Email" /></span>
-									<p id="Email_error" class="zf-errorMessage" style="display:none;">Please complete this required field.
+									<p id="Email_error" class="zf-errorMessage" style="display:none;">Please complete
+										this required field.
 									</p>
 								</div>
 								<div class="zf-clearBoth"></div>
@@ -171,7 +174,8 @@
 											</span>
 											<div class="zf-clearBoth"></div>
 										</div>
-										<p id="PhoneNumber1_error" class="zf-errorMessage" style="display:none;">Please complete this required field.
+										<p id="PhoneNumber1_error" class="zf-errorMessage" style="display:none;">Please
+											complete this required field.
 										</p>
 									</div>
 									<div class="zf-clearBoth"></div>
@@ -191,8 +195,9 @@
 								</label>
 								<div class="zf-tempContDiv">
 									<span> <input type="text" name="SingleLine" checktype="c1" value="" maxlength="255"
-											fieldType=1 placeholder="Company Name" autocomplete="off" /></span>
-									<p id="SingleLine_error" class="zf-errorMessage" style="display:none;">Please complete this required field.
+											fieldType=1 placeholder="Company Name" autocomplete="off" onkeypress="return blockSpecialChar(event)" /></span>
+									<p id="SingleLine_error" class="zf-errorMessage" style="display:none;">Please
+										complete this required field.
 									</p>
 								</div>
 								<div class="zf-clearBoth"></div>
@@ -486,7 +491,8 @@
 								<div class="zf-tempContDiv">
 									<span> <textarea name="MultiLine" checktype="c1" maxlength="65535"
 											placeholder=""></textarea> </span>
-									<p id="MultiLine_error" class="zf-errorMessage" style="display:none;">Please complete this required field.
+									<p id="MultiLine_error" class="zf-errorMessage" style="display:none;">Please
+										complete this required field.
 									</p>
 								</div>
 								<div class="zf-clearBoth"></div>
@@ -641,7 +647,7 @@
 						dropdownList.append(
 							`<div class="dropdown-item" id="BuildingNumber, ${option.Text}" onclick="getAddressDetail(event, this);"> ${option.Text}  ${option.Description.includes("-") ? option.Description.substring(0, option.Description.lastIndexOf(" - ")) : option.Description}<span id="${option.Id}" onclick="callback(event, this);">see all ${option.Description}</span></div></div>`
 						);
-					}else if (option.Type === "BuildingNumberType") {
+					} else if (option.Type === "BuildingNumberType") {
 						dropdownList.append(
 							`<div class="dropdown-item" id="BuildingNumberType, ${option.Text}" onclick="getAddressDetail(event, this);"> ${option.Text}  ${option.Description.includes("-") ? option.Description.substring(0, option.Description.lastIndexOf(" - ")) : option.Description}<span id="${option.Id}" onclick="callback(event, this);">see all ${option.Description}</span></div></div>`
 						);
@@ -717,6 +723,13 @@
 				dropdownList.empty();
 			});
 			dropdownList.append(closeButton);
+		}
+	</script>
+	<script type="text/javascript">
+		function blockSpecialChar(e) {
+			var k;
+			document.all ? k = e.keyCode : k = e.which;
+			return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57));
 		}
 	</script>
 </body>
