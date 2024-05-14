@@ -1257,7 +1257,8 @@ p {
 
 #form .action-button:hover,
 #form .action-button:focus {
-  background: linear-gradient(275deg, #9b2269 5%, #d378ff 100%);
+  /* background: linear-gradient(275deg, #9b2269 5%, #d378ff 100%); */
+  background-color: #E65911;
   border-color: transparent;
   border-left-color: #d378ff;
   border-right-color: #9b2269;
@@ -1325,7 +1326,7 @@ p {
 }
 
 #progressbar .active {
-  color: #961e70;
+  color: #52519E;
 }
 
 #progressbar li {
@@ -1391,7 +1392,7 @@ p {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-  background: #961e70;
+  background: #52519E;
 }
 
 .progress {

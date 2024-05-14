@@ -76,7 +76,8 @@
 												<em class="zf-important">*</em>
 											</label>
 											<input type="text" maxlength="255" name="Name_First" fieldType=7
-												placeholder="First Name" autocomplete="off" onkeypress="return blockSpecialChar(event)" />
+												placeholder="First Name" autocomplete="off"
+												onkeypress="return blockSpecialChar(event)" />
 											<p id="Name_error" class="zf-errorMessage" style="display:none;">Please
 												complete this required field.</p>
 										</span>
@@ -86,7 +87,8 @@
 
 											</label>
 											<input type="text" maxlength="255" name="Name_Last" fieldType=7
-												placeholder="Last Name" autocomplete="off" onkeypress="return blockSpecialChar(event)" />
+												placeholder="Last Name" autocomplete="off"
+												onkeypress="return blockSpecialChar(event)" />
 											<p id="Name_error" class="zf-errorMessage" style="display:none;">Please
 												complete this required field.</p>
 
@@ -140,7 +142,7 @@
 							<div class="name-item-2">
 								<li class="zf-tempFrmWrapper zf-large"><label class="zf-labelName">
 										Business Phone
-										<!-- <em class="zf-important">*</em> -->
+										<em class="zf-important">*</em>
 									</label>
 									<div class="zf-tempContDiv zf-phonefld">
 										<div class="zf-phwrapper zf-phNumber">
@@ -162,6 +164,7 @@
 								<!---------Phone Starts Here---------->
 								<li class="zf-tempFrmWrapper zf-large"><label class="zf-labelName">
 										Mobile Phone
+										<em class="zf-important">*</em>
 									</label>
 									<div class="zf-tempContDiv zf-phonefld">
 										<div class="zf-phwrapper zf-phNumber">
@@ -195,7 +198,8 @@
 								</label>
 								<div class="zf-tempContDiv">
 									<span> <input type="text" name="SingleLine" checktype="c1" value="" maxlength="255"
-											fieldType=1 placeholder="Company Name" autocomplete="off" onkeypress="return blockSpecialChar(event)" /></span>
+											fieldType=1 placeholder="Company Name" autocomplete="off"
+											onkeypress="return blockSpecialChar(event)" /></span>
 									<p id="SingleLine_error" class="zf-errorMessage" style="display:none;">Please
 										complete this required field.
 									</p>
@@ -367,7 +371,7 @@
 													<option value="UKR">Ukraine</option>
 													<option value="ARE">United Arab Emirates</option>
 													<option value="GBR">United Kingdom</option>
-													<option value="USA">United States</option>
+													<option value="USA">United States of America</option>
 													<option value="URY">Uruguay</option>
 													<option value="UZB">Uzbekistan</option>
 													<option value="VAT">Vatican City</option>
@@ -410,7 +414,7 @@
 
 											<span class="zf-flLeft zf-addtwo">
 												<label>State/Region/Province
-													<em class="zf-important star">*</em>
+													<em class="zf-important star" id="state_star">*</em>
 												</label>
 												<select class="Address_Region state-dropdown" checktype="c1"
 													placeholder="">
@@ -509,7 +513,8 @@
 							<li class="zf-tempFrmWrapper"><label class="zf-labelName">FEIN
 								</label>
 								<div class="zf-tempContDiv">
-									<input type="file" name="FileUpload" checktype="c1" />
+									<input type="file" name="FileUpload" checktype="c1"
+										accept=".pdf, .png, .jpg, .ppt, .tiff, .bmp, .svg, .doc, .docx, .xls, .xlsx, .odt, .zip" />
 									<p id="FileUpload_error" class="zf-errorMessage" style="display:none;">Choose any
 										file
 										for this field.</p>
@@ -521,7 +526,8 @@
 							<li class="zf-tempFrmWrapper"><label class="zf-labelName">Resale/Sales Tax License
 								</label>
 								<div class="zf-tempContDiv">
-									<input type="file" name="FileUpload3" checktype="c1" />
+									<input type="file" name="FileUpload3" checktype="c1"
+										accept=".pdf, .png, .jpg, .ppt, .tiff, .bmp, .svg, .doc, .docx, .xls, .xlsx, .odt, .zip" />
 									<p id="FileUpload3_error" class="zf-errorMessage" style="display:none;">Choose any
 										file
 										for this field.</p>
@@ -533,7 +539,8 @@
 							<li class="zf-tempFrmWrapper"><label class="zf-labelName">State Tobacco License
 								</label>
 								<div class="zf-tempContDiv">
-									<input type="file" name="FileUpload2" checktype="c1" />
+									<input type="file" name="FileUpload2" checktype="c1"
+										accept=".pdf, .png, .jpg, .ppt, .tiff, .bmp, .svg, .doc, .docx, .xls, .xlsx, .odt, .zip" />
 									<p id="FileUpload2_error" class="zf-errorMessage" style="display:none;">Choose any
 										file
 										for this field.</p>
@@ -545,7 +552,8 @@
 							<li class="zf-tempFrmWrapper"><label class="zf-labelName">Unified Resale Certificate
 								</label>
 								<div class="zf-tempContDiv">
-									<input type="file" name="FileUpload1" checktype="c1" />
+									<input type="file" name="FileUpload1" checktype="c1"
+										accept=".pdf, .png, .jpg, .ppt, .tiff, .bmp, .svg, .doc, .docx, .xls, .xlsx, .odt, .zip" />
 									<p id="FileUpload1_error" class="zf-errorMessage" style="display:none;">Choose any
 										file
 										for this field.</p>

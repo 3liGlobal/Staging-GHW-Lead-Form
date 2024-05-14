@@ -151,7 +151,7 @@ var countries_states = {
     "BC": "British Columbia",
     "MB": "Manitoba",
     "NL": "Newfoundland and Labrador",
-    "NB": "New Brunswick",
+    "NB": "Nouveau-Brunswick",
     "NS": "Nova Scotia",
     "NT": "Northwest Territories",
     "NU": "Nunavut",
@@ -159,7 +159,7 @@ var countries_states = {
     "PE": "Prince Edward Island",
     "QC": "Quebec",
     "SK": "Saskatchewan",
-    "YT": "Yukon Territory"
+    "YT": "Yukon Territory",
   },
   "CHE": {
     "AG": "Aargau",
@@ -1179,16 +1179,7 @@ var countries_states = {
   }
 };
 
-var countriesWithState = [
-  'ALB', 'ARG', 'AUT', 'AUS', 'BEL',
-  'BGR', 'BOL', 'BRA', 'CAN', 'CHE',
-  'CHL', 'CHN', 'COL', 'DEU', 'DNK',
-  'ECU', 'EST', 'ESP', 'FIN', 'FRA',
-  'GRC', 'GUY', 'HRV', 'IND', 'ISL',
-  'ITA', 'LTU', 'LVA', 'MEX', 'PER',
-  'POL', 'PRT', 'PRY', 'ROU', 'SWE',
-  'SUR', 'USA', 'URY', 'VEN'
-];
+var countriesWithState = ["USA", "CAN"];
 
 var original_zf_MandArray = [
   "Name_First",
@@ -1205,7 +1196,6 @@ var original_zf_MandArray = [
 var zf_MandArray = original_zf_MandArray.slice();
 
 window.onload = function () {
-  console.log("Environment: Sandbox-1")
   var countySel = document.querySelector(".zf-form-sBox"),
     stateDropdown = document.querySelector(".state-dropdown"),
     stateText = document.querySelector(".state-text"),
@@ -1217,7 +1207,6 @@ window.onload = function () {
     //zipcodeInput = document.getElementById("postalCode");
     countyInput = document.getElementById("county");
   stateLabel = document.getElementById("stateLabel");
-
   countySel.value = "USA";
   // Handle change event on country dropdown
   countySel.onchange = function () {
@@ -1228,6 +1217,7 @@ window.onload = function () {
     updateStateDropdown();
     // updateStateDropdown1();
     //updateArray();
+    removeRequired();
   };
 
   function updateStateDropdown() {
@@ -1453,6 +1443,30 @@ window.onload = function () {
     // }, 100); // Adjust the delay as needed
   }
 
+  function removeRequired() {
+    if (countySel.value == "USA" || countySel.value == "CAN") {
+      zf_MandArray = addIfNotExist("Address_Region");
+      document.getElementById("state_star").style.display = "inline-block";
+    } else {
+      zf_MandArray = removeIfExists("Address_Region");
+      document.getElementById("state_star").style.display = "none";
+    }
+  }
+
+  function addIfNotExist(value) {
+    if (original_zf_MandArray.indexOf(value) === -1) {
+      original_zf_MandArray.push(value);
+    }
+    return original_zf_MandArray;
+  }
+
+  function removeIfExists(value) {
+    var index = original_zf_MandArray.indexOf(value);
+    if (index !== -1) {
+      original_zf_MandArray.splice(index, 1);
+    }
+    return original_zf_MandArray;
+  }
   // Initial setup
   updateStateDropdown();
   //updateArray();
